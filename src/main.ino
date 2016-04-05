@@ -43,10 +43,14 @@ void setup()
   softSerial.print("AT+CWJAP=\"610Main24\",\"wifi610zejm\"\r\n");
   delay(5000);
   Serial.println("ESP Config done.");
+  count = 29990;
 }
 
 void loop()
 {
+  if(count>30000) {
+    count = 0;
+  }
   count++;
   char buf[10];
 
