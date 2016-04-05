@@ -49,6 +49,13 @@ void loop()
 {
   count++;
   char buf[10];
+
+  //read A0
+  int sensorValue = analogRead(A0);
+  Serial.println(sensorValue);
+  float voltage= sensorValue * (5.0 / 1023.0);
+  Serial.print("Voltage: ");
+  Serial.println(voltage);
   String cmd = "AT+CIPSTART=\"TCP\",\"";
   cmd += "api.thingspeak.com";
   cmd += "\",80";
@@ -62,7 +69,7 @@ void loop()
   String getStr = "GET /update?api_key=";
   getStr += tsapikey;
   getStr +="&field1=";
-  getStr += String(60);
+  getStr += String(voltage);
   getStr += "\r\n\r\n";
 
   // send data length
@@ -86,6 +93,8 @@ void loop()
     u8g.drawStr( 0, 20, "Hello World!");
     sprintf(buf, "%d", count);
     u8g.drawStr( 0, 40, buf);
+    dtostrf(voltage, 7, 3, buf);
+    u8g.drawStr( 0, 60, buf);
     Serial.println("oled written.");
   } while(u8g.nextPage());
 
