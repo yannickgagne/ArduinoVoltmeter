@@ -52,7 +52,7 @@ void loop()
     count = 0;
   }
   count++;
-  char buf[10];
+  char buf[14];
 
   //read A0
   int sensorValue = analogRead(A0);
@@ -73,7 +73,7 @@ void loop()
   String getStr = "GET /update?api_key=";
   getStr += tsapikey;
   getStr +="&field1=";
-  getStr += String(voltage);
+  getStr += String(voltage, DEC);
   getStr += "\r\n\r\n";
 
   // send data length
