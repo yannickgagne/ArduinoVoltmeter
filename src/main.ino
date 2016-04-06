@@ -26,6 +26,7 @@ int count;
 
 void setup()
 {
+  analogReference(EXTERNAL);
   uint32_t baud = 9600;
   Serial.begin(baud);
   softSerial.begin(baud);
@@ -57,7 +58,7 @@ void loop()
   //read A0
   int sensorValue = analogRead(A0);
   Serial.println(sensorValue);
-  float voltage= sensorValue * (5.0 / 1023.0);
+  float voltage= sensorValue * (5.009 / 1023.0);
   Serial.print("Voltage: ");
   Serial.println(voltage);
   String cmd = "AT+CIPSTART=\"TCP\",\"";
