@@ -21,6 +21,11 @@ Why the ESP8266 in AT mode? Well I was not able to make the display work directl
 ###IDE
 - PlatformIO [http://platformio.org/](http://platformio.org/)
 
+###Pictures
+The display is broken in this pic. Waiting for a new one.
+
+<img src="https://cloud.githubusercontent.com/assets/11507542/14336691/8d8d3f9c-fc34-11e5-9f61-27a3a559474b.jpg" width="15%"></img> 
+
 ###Things to come
 - KiCAD schematics
 - Bare ESP-12 instead of HUZZAH
