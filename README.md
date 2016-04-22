@@ -14,6 +14,9 @@ Why the ESP8266 in AT mode? Well I was not able to make the display work directl
 - I2C 128x64 OLED (the cheap ones from eBay)
 - 5V Shunt Voltage Reference LM4040
 
+###Schematic
+<img src="https://cloud.githubusercontent.com/assets/11507542/14757252/7dc6bab0-08bf-11e6-8dfe-a98279858d81.jpg" width="50%"></img>
+
 ###Libraries used
 - U8glib
 - SoftwareSerial
