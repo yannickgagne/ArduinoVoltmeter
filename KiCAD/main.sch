@@ -1,0 +1,231 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:myparts
+LIBS:shield_arduino
+LIBS:ESP8266
+EELAYER 25 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 1 1
+Title "Arduino Nano Voltmeter"
+Date "2016-04-22"
+Rev "1"
+Comp "Yannick Gagne"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L ARDUINO_NANO SH1
+U 1 1 571A9CC9
+P 3800 4100
+F 0 "SH1" H 3775 2925 60  0000 C CNN
+F 1 "ARDUINO_NANO" H 3775 5150 60  0000 C CNN
+F 2 "" H 2875 3500 60  0000 C CNN
+F 3 "" H 2875 3500 60  0000 C CNN
+	1    3800 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Adafruit_HUZZAH U1
+U 1 1 571A9CFC
+P 6075 3700
+F 0 "U1" H 6075 3100 60  0000 C CNN
+F 1 "Adafruit_HUZZAH" H 6075 4300 60  0000 C CNN
+F 2 "" H 5975 3350 60  0000 C CNN
+F 3 "" H 5975 3350 60  0000 C CNN
+	1    6075 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X04 P2
+U 1 1 571A9D59
+P 7425 4550
+F 0 "P2" H 7425 4300 50  0000 C CNN
+F 1 "I2C OLED HEADER" H 7425 4825 50  0000 C CNN
+F 2 "" H 7425 4550 50  0000 C CNN
+F 3 "" H 7425 4550 50  0000 C CNN
+	1    7425 4550
+	1    0    0    1   
+$EndComp
+$Comp
+L CONN_01X02 P1
+U 1 1 571A9DE3
+P 7425 5325
+F 0 "P1" H 7425 5475 50  0000 C CNN
+F 1 "VOLTAGE MEASUREMENT" H 7425 5150 50  0000 C CNN
+F 2 "" H 7425 5325 50  0000 C CNN
+F 3 "" H 7425 5325 50  0000 C CNN
+	1    7425 5325
+	1    0    0    -1  
+$EndComp
+$Comp
+L +9V #PWR?
+U 1 1 571A9E2E
+P 4650 2950
+F 0 "#PWR?" H 4650 2800 50  0001 C CNN
+F 1 "+9V" H 4650 3090 50  0000 C CNN
+F 2 "" H 4650 2950 50  0000 C CNN
+F 3 "" H 4650 2950 50  0000 C CNN
+	1    4650 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 571A9E4A
+P 4650 5375
+F 0 "#PWR?" H 4650 5125 50  0001 C CNN
+F 1 "GND" H 4650 5225 50  0000 C CNN
+F 2 "" H 4650 5375 50  0000 C CNN
+F 3 "" H 4650 5375 50  0000 C CNN
+	1    4650 5375
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R2
+U 1 1 571A9E66
+P 5050 3450
+F 0 "R2" V 5130 3450 50  0000 C CNN
+F 1 "10k" V 5050 3450 50  0000 C CNN
+F 2 "" V 4980 3450 50  0000 C CNN
+F 3 "" H 5050 3450 50  0000 C CNN
+	1    5050 3450
+	0    1    1    0   
+$EndComp
+$Comp
+L R R1
+U 1 1 571A9EBF
+P 5050 3025
+F 0 "R1" V 5130 3025 50  0000 C CNN
+F 1 "1k" V 5050 3025 50  0000 C CNN
+F 2 "" V 4980 3025 50  0000 C CNN
+F 3 "" H 5050 3025 50  0000 C CNN
+	1    5050 3025
+	0    1    1    0   
+$EndComp
+$Comp
+L LM4040CIZ-5.0 U2
+U 1 1 571AA6F0
+P 5225 2650
+F 0 "U2" H 5025 2850 50  0000 C CNN
+F 1 "LM4040CIZ-5.0" H 5225 2850 50  0000 L CNN
+F 2 "TO-92" H 5225 2750 50  0000 C CIN
+F 3 "" H 5225 2650 50  0000 C CNN
+	1    5225 2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4450 3250 5300 3250
+Wire Wire Line
+	4650 2950 4650 3250
+Wire Wire Line
+	4450 3375 4650 3375
+Wire Wire Line
+	4650 3375 4650 5375
+Wire Wire Line
+	5475 3950 5300 3950
+Wire Wire Line
+	5300 3950 5300 3250
+Connection ~ 4650 3250
+Wire Wire Line
+	4650 4150 5475 4150
+Connection ~ 4650 4150
+Wire Wire Line
+	4825 2600 4825 4150
+Connection ~ 4825 4150
+Wire Wire Line
+	4900 3025 4650 3025
+Connection ~ 4650 3025
+Wire Wire Line
+	5225 2900 5225 4750
+Wire Wire Line
+	5225 4750 4450 4750
+Wire Wire Line
+	3150 4875 3075 4875
+Wire Wire Line
+	3075 4875 3075 5150
+Wire Wire Line
+	3075 5150 6700 5150
+Wire Wire Line
+	6700 5150 6700 3350
+Wire Wire Line
+	6700 3350 6625 3350
+Wire Wire Line
+	3150 4750 3025 4750
+Wire Wire Line
+	3025 4750 3025 5200
+Wire Wire Line
+	3025 5200 6750 5200
+Wire Wire Line
+	6750 5200 6750 3250
+Wire Wire Line
+	6750 3250 6625 3250
+Wire Wire Line
+	5200 3450 5475 3450
+Wire Wire Line
+	5200 3025 5225 3025
+Connection ~ 5225 3025
+Wire Wire Line
+	4900 3450 4900 4875
+Wire Wire Line
+	4900 4875 4450 4875
+Wire Wire Line
+	7225 4400 4650 4400
+Connection ~ 4650 4400
+Wire Wire Line
+	4450 3625 4600 3625
+Wire Wire Line
+	4600 3625 4600 4500
+Wire Wire Line
+	4600 4500 7225 4500
+Wire Wire Line
+	4450 4375 4550 4375
+Wire Wire Line
+	4550 4375 4550 4600
+Wire Wire Line
+	4550 4600 7225 4600
+Wire Wire Line
+	4450 4250 4500 4250
+Wire Wire Line
+	4500 4250 4500 4700
+Wire Wire Line
+	4500 4700 7225 4700
+Wire Wire Line
+	4650 5375 7225 5375
+Wire Wire Line
+	4450 3750 5150 3750
+Wire Wire Line
+	5150 3750 5150 5275
+Wire Wire Line
+	5150 5275 7225 5275
+$EndSCHEMATC
